@@ -154,6 +154,11 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
     [self.view.layer addSublayer:_previewLayer];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -267,7 +272,13 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
     }
 }
 
-- (void)resumeScanningQRCode
+- (void)stopScanning
+{
+    _capturedString = nil;
+    [self.avSession stopRunning];
+}
+
+- (void)resumeScanning
 {
     _capturedString = nil;
     [self.avSession startRunning];
@@ -298,7 +309,7 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
             _capturedString = nil;
             [self.avSession startRunning];
         }];
-
+        
         self.completionHandler(result, nil);
     }
 }

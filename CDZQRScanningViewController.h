@@ -56,6 +56,9 @@ typedef NS_ENUM(NSInteger, CDZQRCameraDevice) {
 @property (nonatomic, readonly) NSArray *metadataObjectTypes;
 @property (nonatomic, nullable, readonly) NSString *capturedString;
 
+- (void)stopScanning;
+- (void)resumeScanning;
+
 @end
 
 NS_ASSUME_NONNULL_END
