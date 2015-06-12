@@ -98,11 +98,21 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
     return [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
 }
 
+- (instancetype)initWithCoder:(nonnull NSCoder *)aDecoder
+{
+    return [super initWithCoder:aDecoder];
+}
+
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil
+{
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+}
+
 - (instancetype)initWithMetadataObjectTypes:(NSArray *)metadataObjectTypes
                                      device:(CDZQRCameraDevice)cameraDevice
                                  completion:(CDZQRCompletionHandler)completionHandler
 {
-    if (self = [super init]) {
+    if (self = [super initWithNibName:nil bundle:nil]) {
         self.title = NSLocalizedString(@"Scan QR Code", @"");
 
         _metadataObjectTypes = metadataObjectTypes;
@@ -309,7 +319,7 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
             _capturedString = nil;
             [self.avSession startRunning];
         }];
-        
+
         self.completionHandler(result, nil);
     }
 }

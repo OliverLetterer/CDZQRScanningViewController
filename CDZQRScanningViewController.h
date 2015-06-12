@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger, CDZQRCameraDevice) {
 @interface CDZQRScanningViewController : UIViewController
 
 - (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(nonnull NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE;
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE;
 
 - (instancetype)initWithCompletion:(CDZQRCompletionHandler)completionHandler;
 
