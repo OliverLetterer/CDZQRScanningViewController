@@ -277,7 +277,7 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
 
         NSError *error = nil;
 
-        for (AVAssetWriterInput *input in self.avSession.inputs) {
+        for (AVCaptureInput *input in self.avSession.inputs) {
             [self.avSession removeInput:input];
         }
 
