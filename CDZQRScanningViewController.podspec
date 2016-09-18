@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CDZQRScanningViewController'
-  s.version      = '1.0.7.8'
+  s.version      = '1.0.7.9'
   s.summary      = 'Easy QR code scanning on iOS 7.'
   s.homepage     = 'https://github.com/cdzombak/CDZQRScanningViewController'
   s.license      = 'MIT'
