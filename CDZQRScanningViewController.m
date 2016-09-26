@@ -198,6 +198,12 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
     return [self initWithDevice:[CDZQRScanningViewController lastUserChoosenCamera] completion:completionHandler];
 }
 
+- (instancetype)initWithMetadataObjectTypes:(NSArray *)metadataObjectTypes
+                                 completion:(CDZQRCompletionHandler)completionHandler
+{
+    return [self initWithMetadataObjectTypes:metadataObjectTypes device:[CDZQRScanningViewController lastUserChoosenCamera] completion:completionHandler];
+}
+
 - (void)dealloc
 {
     [self.avSession stopRunning];

@@ -45,6 +45,9 @@ typedef NS_ENUM(NSInteger, CDZQRCameraDevice) {
 
 - (instancetype)initWithCompletion:(CDZQRCompletionHandler)completionHandler;
 
+- (instancetype)initWithMetadataObjectTypes:(NSArray *)metadataObjectTypes
+                                 completion:(CDZQRCompletionHandler)completionHandler;
+
 - (instancetype)initWithDevice:(CDZQRCameraDevice)cameraDevice
                     completion:(CDZQRCompletionHandler)completionHandler;
 
