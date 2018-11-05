@@ -402,7 +402,7 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
         [self.avSession stopRunning];
 
         _CDZQRResult *result = [[_CDZQRResult alloc] initWithResult:_capturedString resumeHandler:^{
-            _capturedString = nil;
+            self->_capturedString = nil;
             [self.avSession startRunning];
         }];
 
